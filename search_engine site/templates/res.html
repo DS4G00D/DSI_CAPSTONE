@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+<div class="container">
+
+    <hgroup class="mb20">
+		<h1>Search Results</h1>
+		<h2> results for <strong class="text-danger">{{ lookup }}</strong></h2>								
+    </hgroup>
+    <hr>
+    <section class="col-xs-12 col-sm-6 col-md-12">
+        {% for li in result %}
+            <article class="search-result row">
+                <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                    <a target="_blank" href= '{{ li.url }}' ><h2> {{ li.title }} </h2></a>
+                    <h3> Similarity Score:  {{ li.similarityScore }} </h3>
+                    <h3> CareerVillage Scores: {{ li.sareerVillageScores }} </h3>					
+                </div>
+                <span class="clearfix borda"></span>
+            </article>
+            <hr>
+        {% endfor %}
+
+	</section>
+</div>
+</body>
+</html>
+</body>
+</html>
